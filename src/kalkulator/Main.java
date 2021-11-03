@@ -9,19 +9,19 @@ public class Main {
 		Scanner scr = new Scanner(System.in);
 		String komanda="";
 		do {
-			String[] kom=komanda.split(" ");
+			
 			komanda = scr.nextLine();
 			if (komanda.isEmpty()) {
 				continue;
 			}
-			
+			String[] kom=komanda.split(" ");
 			
 			int x=Integer.parseInt(kom[0]);
 			int y=Integer.parseInt(kom[2]);
 			int z=0;
 			switch (kom[1]) {
-			case "+":
-				z=x+y;
+			case "-":
+				z=sub(x,y);
 				break;
 			default:
 				System.out.println("Operand nije podrzan");
@@ -33,6 +33,11 @@ public class Main {
 				continue;
 			}
 		}while(!komanda.equals("End"));
+		scr.close();
+	}
+
+	private static int sub(int x, int y) {
+		return x-y;
 	}
 
 }
