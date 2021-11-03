@@ -10,18 +10,29 @@ public class Main {
 		Scanner scr = new Scanner(System.in);
 		String komanda="";
 		do {
+
 			komanda = scr.nextLine();
 			if (komanda.isEmpty()) {
 				continue;
 			}
+
 			
 			String[] kom=komanda.split(" ");
+
+			
+			
+
 			int x=Integer.parseInt(kom[0]);
 			int y=Integer.parseInt(kom[2]);
 			int z=0;
 			switch (kom[1]) {
+
 			case "+":
 				z=addition(x,y);
+				break;
+
+			case "-":
+				z=sub(x,y);
 				break;
 			default:
 				System.out.println("Operand nije podrzan");
@@ -34,8 +45,15 @@ public class Main {
 		}while(!komanda.equals("End"));
 		scr.close();
 	}
+
 	public static int addition(int a,int b) {
 		return a+b;
+	}
+
+
+	private static int sub(int x, int y) {
+		return x-y;
+
 	}
 
 }
